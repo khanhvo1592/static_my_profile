@@ -3,94 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Cá Nhân</title>
+    <title>Name Card - Võ Quốc Khánh</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <ul>
-                <li><a href="#about">Giới thiệu</a></li>
-                <li><a href="#skills">Kỹ năng</a></li>
-                <li><a href="#contact">Liên hệ</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero" class="hero">
-            <div class="container">
-                <div class="profile-image">
-                    <img src="avatar.jpg" alt="Ảnh đại diện">
-                </div>
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                
                 <h1>Võ Quốc Khánh</h1>
                 <p class="title">Kỹ thuật viên đài PTTH Hậu Giang</p>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <h2>Giới thiệu</h2>
-                <p>Viết một đoạn giới thiệu ngắn về bản thân, kinh nghiệm và mục tiêu nghề nghiệp của bạn.</p>
-            </div>
-        </section>
-
-        <section id="skills" class="skills">
-            <div class="container">
-                <h2>Kỹ năng</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fas fa-code"></i>
-                        <h3>Lập trình</h3>
-                        <p>Mô tả kỹ năng lập trình của bạn</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-paint-brush"></i>
-                        <h3>Thiết kế</h3>
-                        <p>Mô tả kỹ năng thiết kế của bạn</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Phân tích</h3>
-                        <p>Mô tả kỹ năng phân tích của bạn</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Liên hệ</h2>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>email@example.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+84 123 456 789</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Địa chỉ của bạn</p>
-                    </div>
+                
+                <div class="profile-image">
+                    <img src="avatar.jpg" alt="Võ Quốc Khánh" onerror="this.src='https://via.placeholder.com/180x180?text=VQK'">
                 </div>
                 <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Võ Quốc Khánh. All rights reserved.</p>
+            <div class="card-back">
+                <h2>Thông tin liên hệ</h2>
+                <ul>
+                    <li>Kỹ thuật viên</li>
+                    <li>Đài PTTH Hậu Giang</li>
+                    <li>Điện thoại: 0909090909</li>
+                    <li>Email: khanhvo@gmail.com</li>
+                </ul>
+                <div class="qr-code">
+                    <!-- Thêm QR code của bạn vào đây -->
+                    <img src="qr-code.png" alt="QR Code" onerror="this.src='https://via.placeholder.com/150x150?text=QR'">
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
         </div>
-    </footer>
-
+    </div>
     <script src="script.js"></script>
 </body>
 </html> 
