@@ -6,44 +6,59 @@
     <title>Name Card - Võ Quốc Khánh</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
     <div class="card">
-        <div class="card-inner">
-            <div class="card-front">
-                
-                <h1>Võ Quốc Khánh</h1>
-                <p class="title">Kỹ thuật viên đài PTTH Hậu Giang</p>
-                
-                <div class="profile-image">
-                    <img src="avatar.jpg" alt="Võ Quốc Khánh" onerror="this.src='https://via.placeholder.com/180x180?text=VQK'">
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                </div>
+        <div class="card-content">
+            <h1>Võ Quốc Khánh</h1>
+            <p class="title">Kỹ thuật viên đài PTTH Hậu Giang</p>
+            <div class="profile-image">
+                <img src="avatar.jpg" alt="Võ Quốc Khánh" onerror="this.src='https://via.placeholder.com/180x180?text=VQK'">
             </div>
-            <div class="card-back">
-                <h2>Thông tin liên hệ</h2>
+            <div class="contact-info">
                 <ul>
-                    <li>Kỹ thuật viên</li>
-                    <li>Đài PTTH Hậu Giang</li>
-                    <li>Điện thoại: 0909090909</li>
-                    <li>Email: khanhvo@gmail.com</li>
+                    <li><i class="fas fa-phone"></i> 0909090909</li>
+                    <li><i class="fas fa-envelope"></i> khanhvo@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Đài PTTH Hậu Giang</li>
                 </ul>
-                <div class="qr-code">
-                    <!-- Thêm QR code của bạn vào đây -->
-                    <img src="qr-code.png" alt="QR Code" onerror="this.src='https://via.placeholder.com/150x150?text=QR'">
-                </div>
-                <div class="social-links-back">
-                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="social-link zalo-link"><i class="fas fa-comment-dots"></i></a>
+            </div>
+            <div class="qr-code" id="qrcode">
+                <!-- QR code sẽ được tạo ở đây -->
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        // Tạo QR code khi trang được tải
+        window.onload = function() {
+            // Thông tin vCard
+            const vCardData = `BEGIN:VCARD
+VERSION:3.0
+N:Võ;Quốc Khánh
+FN:Võ Quốc Khánh
+TITLE:Kỹ thuật viên đài PTTH Hậu Giang
+TEL;TYPE=CELL:0909090909
+EMAIL:khanhvo@gmail.com
+ADR;TYPE=WORK:Đài PTTH Hậu Giang
+END:VCARD`;
+
+            // Tạo QR code
+            new QRCode(document.getElementById("qrcode"), {
+                text: vCardData,
+                width: 150,
+                height: 150,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+    </script>
 </body>
 </html> 
