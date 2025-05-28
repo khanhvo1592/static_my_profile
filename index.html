@@ -30,8 +30,39 @@
             <div class="qr-code">
                 <img src="contact_info_vcard_qr.png" alt="QR Code" onerror="this.src='https://via.placeholder.com/150x150?text=QR'">
             </div>
+            <div class="nfc-indicator">
+                <i class="fas fa-wifi"></i> NFC Ready
+            </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        // Kiểm tra hỗ trợ Web NFC
+        if ('NDEFReader' in window) {
+            const reader = new NDEFReader();
+            
+            // Xử lý sự kiện khi thẻ NFC được quét
+            reader.onreading = event => {
+                const decoder = new TextDecoder();
+                for (const record of event.message.records) {
+                    if (record.recordType === "text") {
+                        const text = decoder.decode(record.data);
+                        console.log("NFC Data:", text);
+                    }
+                }
+            };
+
+            // Xử lý lỗi
+            reader.onerror = error => {
+                console.error("NFC Error:", error);
+            };
+
+            // Bắt đầu quét NFC
+            reader.scan().catch(error => {
+                console.error("Cannot start NFC scanning:", error);
+            });
+        } else {
+            console.log("Web NFC không được hỗ trợ trên thiết bị này");
+        }
+    </script>
 </body>
 </html> 
